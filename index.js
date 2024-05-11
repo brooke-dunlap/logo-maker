@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const {Shape, Triangle, Circle, Square} = require('./lib/shapes')
+const {Triangle, Circle, Square} = require('./lib/shapes')
 const fs = require('fs');
 
 function writeToFile(fileName, data) {
@@ -32,6 +32,20 @@ inquirer.prompt([
     },
 ])
 .then((data) => {
-    console.log('Generated logo.svg');
+    let logo;
+    switch (data.shape) {
+        case 'triangle':
+            logo = new Triangle(data.shapecolor, data.text, data.textcolor);
+            break;
+        case 'circle':
+            logo = new Circle(data.shapecolor, data.text, data.textcolor);
+            break;
+        case 'square':
+            logo = new Square(data.shapecolor, data.text, data.textcolor);
+            break;
+    }
 
+    const myLogo = logo.generateSVG();
+    writeToFile("logo.svg", myLogo);
+    console.log('Generated logo.svg');
 });
