@@ -1,5 +1,12 @@
 const inquirer = require('inquirer');
+const {Shape, Triangle, Circle, Square} = require('./lib/shapes')
 const fs = require('fs');
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (error) =>
+    error ? console.error(error) : console.log('Success!')
+    );  
+}
 
 inquirer.prompt([
     {
@@ -25,6 +32,6 @@ inquirer.prompt([
     },
 ])
 .then((data) => {
-
+    console.log('Generated logo.svg');
 
 });
