@@ -12,6 +12,8 @@ N/A
 
 Users must navigate to the terminal and run: node index.js. Once this is done, the app will provide a series of questions the user must answer. After the questions are answered, the program will automatically generate a .svg file with the user's logo inside. A demonstration video is provided in the link below.
 
+https://drive.google.com/file/d/1IN4a4wbLwwkzPm_bRVPH1O25xvgyL6BY/view
+
 ## Credits
 
 Collaborated with chatGPT.
